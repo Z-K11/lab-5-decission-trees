@@ -12,4 +12,9 @@ data.dropna(inplace=True)
 print(data.isna().sum())
 # now we have no missing values
 x = data.drop(columns="MEDV")
-# .drop() willl extract data from the data coulmns="MEDV" makes sure that this column is removed from the dataset and assigned to x
+# .drop() willtremove the specified data from the data, coulmns="MEDV" makes sure that this column is removed from the dataset 
+# the remaining dataset without MEDV is assinged to x
+y =data["MEDV"]
+print(x.head)
+print(y.head)
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=1)
