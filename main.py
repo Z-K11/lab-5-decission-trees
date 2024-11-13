@@ -18,3 +18,5 @@ y =data["MEDV"]
 print(x.head)
 print(y.head)
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=1)
+regression_tree = DecisionTreeRegressor(criterion='mse')
+regression_tree.fit(x_train,y_train)
